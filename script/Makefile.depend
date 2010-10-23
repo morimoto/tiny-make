@@ -15,7 +15,7 @@ depend.mk: ${SRC}
 		: > $@)
 
 sub_depend:
-	${FOR} dir in ${SUBDIR} ; do \
+	${FOR} dir in ${SUBDIR} ${INDEPENDENT} ; do \
 		${MAKE} -C $$dir all -f ${TOP}/script/Makefile.depend; \
 	done
 
@@ -25,6 +25,6 @@ clean: sub_clean
 	${RM} ${SCRIPT}
 
 sub_clean:
-	${FOR} dir in ${SUBDIR} ; do \
+	${FOR} dir in ${SUBDIR} ${INDEPENDENT} ; do \
 		${MAKE} -C $$dir clean -f ${TOP}/script/Makefile.depend; \
 	done

@@ -29,6 +29,7 @@ endif
 #
 ###########################################
 SUBDIR	+= common platform
+INDEPENDENT	+= sample
 
 ###########################################
 #
@@ -52,14 +53,11 @@ export ARCH
 
 all: depend.mk
 	${MYMAKE} all -f ${TOP}/script/Makefile.build;
-	${MYMAKE} all -C sample -f ${TOP}/script/Makefile.build;
 
 depend.mk:
 	${MYMAKE} all -f ${TOP}/script/Makefile.depend;
-	${MYMAKE} all -C sample -f ${TOP}/script/Makefile.depend;
 
 clean:
 	${MYMAKE} all -f ${TOP}/script/Makefile.clean;
-	${MYMAKE} all -C sample -f ${TOP}/script/Makefile.clean;
 
 endif # TOP

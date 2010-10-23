@@ -13,7 +13,13 @@ SUB_BUILT	= $(if ${SUBDIR}, $(addsuffix /builtin.o, ${SUBDIR}))
 # target
 #
 ##################################
-all: sub_built ${SUB_BUILT} builtin.o ${TARGET}
+all: sub_all
+	${FOR} dir in ${INDEPENDENT} ; do \
+		${MAKE} -C $$dir all -f ${TOP}/script/Makefile.build; \
+	done
+
+
+sub_all: sub_built ${SUB_BUILT} builtin.o ${TARGET}
 
 builtin.o: ${OBJ} ${SUB_BUILT}
 	${LD} -r -o $@ ${SUB_BUILT} ${OBJ}
@@ -34,7 +40,7 @@ clean: sub_clean
 	${RM} ${TARGET}
 
 sub_clean:
-	${FOR} dir in ${SUBDIR} ; do \
+	${FOR} dir in ${SUBDIR} ${INDEPENDENT}; do \
 		${MAKE} -C $$dir clean -f ${TOP}/script/Makefile.build; \
 	done
 

@@ -37,7 +37,8 @@
 	you can use below variables on each Makefile
 
 	OBJ		: compile target
-	SUBDIR		: sub directory for compile
+	SUBDIR		: compile target sub directory
+	INDEPENDENT	: compile target sub directory which is independent from SUBDIR
 	SCRIPT		: it is the script which runs before OBJ is compiled
 	TARGET		: target object which build from OBJ
 	LINCLUDE	: The include dir which you need.

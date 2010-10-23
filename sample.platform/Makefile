@@ -1,3 +1,3 @@
 OBJ		= cpu.o
 SUBDIR		= ${ARCH} ${PLATFORM}
-LINCLUDE	+= ${TOP}/platform/include
+LINCLUDE	+= ${TOP}/sample.platform/include

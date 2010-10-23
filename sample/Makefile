@@ -1,6 +1,6 @@
 OBJ		+= test_platform.o
 TARGET		= test_platform
-LINCLUDE	+= ${TOP}/platform/include
+LINCLUDE	+= ${TOP}/sample.platform/include
 
 test_platform: test_platform.o ../builtin.o
 	${ECHO} "$@"

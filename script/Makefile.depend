@@ -1,0 +1,30 @@
+-include ./Makefile
+-include ${TOP}/script/Makefile.common
+
+##################################
+#
+# command
+#
+##################################
+all: ${SCRIPT} sub_depend  depend.mk
+
+depend.mk: ${SRC}
+	${ECHO} "create depend in" `pwd`
+	$(if ${SRC},\
+		${CC} -M ${SRC} ${INCLUDE} > $@,\
+		: > $@)
+
+sub_depend:
+	${FOR} dir in ${SUBDIR} ; do \
+		${MAKE} -C $$dir all -f ${TOP}/script/Makefile.depend; \
+	done
+
+clean: sub_clean
+	${ECHO} "clean depend in" `pwd`
+	${RM} depend.mk
+	${RM} ${SCRIPT}
+
+sub_clean:
+	${FOR} dir in ${SUBDIR} ; do \
+		${MAKE} -C $$dir clean -f ${TOP}/script/Makefile.depend; \
+	done

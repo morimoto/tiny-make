@@ -1,0 +1,61 @@
+##################################
+#
+# common variable
+#
+##################################
+ifndef TOP
+export TOP	= $(shell /bin/pwd)
+export CC	= ${Q} ${CROSS_COMPILE}gcc
+export LD	= ${Q} ${CROSS_COMPILE}ld
+export STRIP	= ${Q} ${CROSS_COMPILE}strip
+export XINCLUDE	=
+
+# verbose make
+ifeq (${VERBOSE}, 1)
+ export Q =
+ export M =
+else
+ export Q = @
+ export M = -s
+endif
+
+# debug make
+ifeq (${DEBUG}, 1)
+export DEBUG_MODE	= -D_DEBUG
+endif
+
+
+endif # TOP
+
+##################################
+#
+# command
+#
+##################################
+MYMAKE	= ${Q} ${MAKE} ${M}
+FOR	= ${Q}for
+RM	= ${Q}rm -fr
+ECHO	= ${Q}echo
+
+##################################
+#
+# option
+#
+##################################
+
+# CFLAGS
+CFLAGS	= -Wall -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion ${DEBUG_MODE}
+
+# INCLUDE
+INCLUDE	= -I${TOP}/include ${XINCLUDE}
+XINCLUDE += $(if $(LINCLUDE), $(addprefix -I, ${LINCLUDE}))
+
+# SRC
+SRC = $(OBJ:.o=.c)
+
+##################################
+#
+# load local settings
+#
+##################################
+-include ${TOP}/script/Makefile.local

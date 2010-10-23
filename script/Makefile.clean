@@ -1,0 +1,11 @@
+-include ./Makefile
+-include ${TOP}/script/Makefile.common
+
+##################################
+#
+# command
+#
+##################################
+all:
+	${MYMAKE} -f ${TOP}/script/Makefile.depend clean;
+	${MYMAKE} -f ${TOP}/script/Makefile.build  clean;

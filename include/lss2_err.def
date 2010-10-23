@@ -1,0 +1,15 @@
+#if defined(LSS2ERR_DEF)
+#define ERR(a, b)  LSS2ERR_ ## a,
+#elif defined(LSS2ERR_STRING)
+#define ERR(a, b)  case LSS2ERR_ ## a: msg = b " error"; break;
+#endif
+
+ERR(IO,		"I/O")
+ERR(MEM,	"Memory")
+ERR(PARAM,	"Parameter")
+ERR(FILE,	"File")
+ERR(SIZE,	"Size")
+
+#undef ERR
+#undef LSS2ERR_DEF
+#undef LSS2ERR_STRING

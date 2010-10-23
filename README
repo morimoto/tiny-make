@@ -1,0 +1,51 @@
+============== -*- outline -*- ==============
+
+                    ReadMe
+2010/06  morimoto
+=============================================
+
+* What is tiny-make ?
+
+	Creating Makefile is troublesome for me =)
+	In my point of view, Linux Makefile seems very useful.
+	I hope this tiny-make become tiny version of it.
+
+* Where is tiny-make ?
+
+	you can get it
+
+	git clone git://github.com/morimoto/tiny-make.git
+
+* License
+
+	This library is free software; you can redistribute it and/or
+	modify it under the terms of the GNU Lesser General Public
+	License as published by the Free Software Foundation; either
+	version 2.0 of the License, or later version.
+
+	This library is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+	Lesser General Public License for more details.
+
+	You should have received a copy of the GNU Lesser General Public
+	License along with this library; if not, write to the Free Software
+	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+
+* Makefile
+
+	you can use below variables on each Makefile
+
+	OBJ		: compile target
+	SUBDIR		: sub directory for compile
+	SCRIPT		: it is the script which runs before OBJ is compiled
+	TARGET		: target object which build from OBJ
+	LINCLUDE	: The include dir which you need.
+
+	${TINY-MAKE}/script/Makefile.XXX are main Mailfiles.
+	You can create system dependency Makefile as ${TINY-MAKE}/Makefile.local
+
+* .config
+
+	User defined config file.
+	It is depend on your system

@@ -1,0 +1,41 @@
+-include ./Makefile
+-include ${TOP}/script/Makefile.common
+
+########################################
+#
+# variable for Makefile.builtin
+#
+########################################
+SUB_BUILT	= $(if ${SUBDIR}, $(addsuffix /builtin.o, ${SUBDIR}))
+
+##################################
+#
+# target
+#
+##################################
+all: sub_built ${SUB_BUILT} builtin.o ${TARGET}
+
+builtin.o: ${OBJ} ${SUB_BUILT}
+	${LD} -r -o $@ ${SUB_BUILT} ${OBJ}
+
+.c.o:
+	${ECHO} "CC $@"
+	${CC} ${CFLAGS} ${INCLUDE} ${LFLAGS} -c $<
+
+sub_built:
+	${FOR} dir in ${SUBDIR} ; do \
+		${MAKE} -C $$dir all -f ${TOP}/script/Makefile.build; \
+	done
+
+clean: sub_clean
+	${ECHO} "clean build in" `pwd`
+	${RM} ${OBJ}
+	${RM} builtin.o
+	${RM} ${TARGET}
+
+sub_clean:
+	${FOR} dir in ${SUBDIR} ; do \
+		${MAKE} -C $$dir clean -f ${TOP}/script/Makefile.build; \
+	done
+
+-include depend.mk

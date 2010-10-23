@@ -6,13 +6,21 @@
 
 * What is tiny-make ?
 
-	Creating Makefile is troublesome for me =)
-	In my point of view, Linux Makefile seems very useful.
-	I hope this tiny-make become tiny version of it.
+	Creating Makefile is troublesome for me in any project =)
+	And in my point of view, Linux Makefile system seems very useful.
+	I created this tiny-make as tiny version of it.
+
+	If you use tiny-make, your Makefile will be
+
+	----------------------
+	 OBJ	+= err.o version.o
+	----------------------
+
+	It is very easy and tiny don't you ?
 
 * Where is tiny-make ?
 
-	you can get it
+	you can get it from
 
 	git clone git://github.com/morimoto/tiny-make.git
 
@@ -84,3 +92,8 @@
 
 	SUBDIR		: same as above
 	INDEPENDENT	: same as above
+
+* Makefile.local
+
+	Makefile for you own system.
+	This file is loaded from Makefile.common

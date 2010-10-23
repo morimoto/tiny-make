@@ -50,3 +50,12 @@
 
 	User defined config file.
 	It is depend on your system
+
+* sys.config
+
+	System defined config file.
+	You can use sample.sys.config
+	You can use it as "fool proof" because it is loaded after .confing
+
+	SUBDIR		: same as above
+	INDEPENDENT	: same as above

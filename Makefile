@@ -1,35 +1,16 @@
 ###########################################
 #
-# version
-#
-###########################################
-MAJORVERSION	= 0
-LEVELVERSION	= 0
-MINORVERSION	= 1
-EXTRAVERSION	= 1
-
-###########################################
-#
 # settings from user
 #
 ###########################################
 -include .config
 
-ifndef PLATFORM
-PLATFORM = dummy
-endif
-
-ifndef ARCH
-ARCH = dummy
-endif
-
 ###########################################
 #
-# necessary variable
+# settings for system
 #
 ###########################################
-SUBDIR	+= common platform
-INDEPENDENT	+= sample
+include sys.config
 
 ###########################################
 #
@@ -39,14 +20,6 @@ INDEPENDENT	+= sample
 ###########################################
 ifndef TOP
 include ./script/Makefile.common
-
-# variable export
-export MAJOR_VERSION = ${MAJORVERSION}
-export LEVEL_VERSION = ${LEVELVERSION}
-export MINOR_VERSION = ${MINORVERSION}
-export EXTRA_VERSION = ${EXTRAVERSION}
-export PLATFORM
-export ARCH
 
 # make target
 .PHONY : clean

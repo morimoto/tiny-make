@@ -32,6 +32,31 @@
 	License along with this library; if not, write to the Free Software
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
+* How to use tiny-make ?
+
+	At first, you can try tiny-make in here.
+	To try it, below files are needed.
+
+		./.config
+		./sys.config
+		./script/Makefile.local
+
+	You can create these from sample.xxx,
+	and modify it.
+	Next, you can run
+
+		> make
+
+	This "make" is sample work of tiny-make.
+	               ^^^^^^^^^^^
+
+	If you want to use this tiny-make, run
+
+		> create-tiny-make.sh
+
+	You can get tiny-make-vA.B.tar.bz2 which includes tiny-make files.
+	You can use it to your system.
+
 * Makefile
 
 	you can use below variables on each Makefile

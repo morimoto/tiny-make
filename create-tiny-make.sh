@@ -11,7 +11,6 @@ TLIST=" script/Makefile.build\
 	script/Makefile.depend\
 	Makefile\
 	sample.config\
-	sample.sys.config\
 	"
 
 tar -jcf ${TNAME}.tar.bz2 ${TLIST}

@@ -46,7 +46,6 @@
 	To try it, below files are needed.
 
 		./.config
-		./sys.config
 		./script/Makefile.local
 
 	You can create these from sample.xxx,
@@ -83,15 +82,6 @@
 
 	User defined config file.
 	It is depend on your system
-
-* sys.config
-
-	System defined config file.
-	You can use sample.sys.config
-	You can use it as "fool proof" because it is loaded after .confing
-
-	SUBDIR		: same as above
-	INDEPENDENT	: same as above
 
 * Makefile.local
 

@@ -8,13 +8,6 @@
 
 ###########################################
 #
-# settings for system
-#
-###########################################
-include sys.config
-
-###########################################
-#
 # This Makefile is used from script/Makefile.XXX
 # Below settings are not necessary for it.
 #

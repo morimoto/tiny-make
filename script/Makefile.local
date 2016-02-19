@@ -7,12 +7,6 @@ export MINOR_VERSION	= 1
 export EXTRA_VERSION	= 1
 
 #
-# variable export
-#
-export PLATFORM
-export ARCH
-
-#
 # SPU2 local settings
 #
 CFLAGS	+= -DMAJOR_VERSION=${MAJOR_VERSION} \

@@ -1,3 +1,3 @@
 OBJ		= cpu.o
-SUBDIR		= ${ARCH} ${PLATFORM}
+SUBDIR		= Linux sh
 LINCLUDE	+= ${TOP}/sample.platform/include

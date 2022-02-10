@@ -1,8 +1,9 @@
+SUBDIR		= common platform
 OBJ		+= test_platform.o
-TARGET		= test_platform
-LINCLUDE	+= ${TOP}/sample.platform/include
+TARGET		= sample_program
+LINCLUDE	+= ${TOP}/sample/platform/include
 
-test_platform: test_platform.o ../builtin.o
+sample_program: ./builtin.o
 	${ECHO} "$@"
-	@$(CC) $(CFLAGS) $(INCLUDE) $(LFLAGS) -o $@ test_platform.o ../builtin.o
+	@$(CC) $(CFLAGS) $(INCLUDE) $(LFLAGS) -o $@ ./builtin.o
 	@$(STRIP) $@

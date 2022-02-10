@@ -1,5 +1,9 @@
 # tiny-make-v0.1
 ###########################################
+# You can get tiny-make from
+#	https://github.com/morimoto/tiny-make.git
+#	https://gitlab.com/morimoto.kuninori/tiny-make.git
+###########################################
 #
 # settings from user
 #

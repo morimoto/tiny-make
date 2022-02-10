@@ -44,4 +44,9 @@ sub_clean:
 		${MAKE} -C $$dir clean -f ${TOP}/script/Makefile.build; \
 	done
 
+${TARGET}: ./builtin.o
+	${ECHO} "$@"
+	${CC} ${CFLAGS} ${INCLUDE} ${LFLAGS} -o $@ ./builtin.o
+	${STRIP} $@
+
 -include depend.mk

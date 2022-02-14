@@ -19,7 +19,7 @@ all: sub_all
 	done
 
 
-sub_all: sub_built ${SUB_BUILT} builtin.o ${TARGET}
+sub_all: sub_built ${SUB_BUILT} builtin.o ${TARGET} ${MYTARGET}
 
 builtin.o: ${OBJ} ${SUB_BUILT}
 	${LD} -r -o $@ ${SUB_BUILT} ${OBJ}

@@ -73,6 +73,7 @@
 	INDEPENDENT	: compile target sub directory which is independent from SUBDIR
 	SCRIPT		: it is the script which runs before OBJ is compiled
 	TARGET		: target object which build from OBJ
+	MYTARGET	: user own target. user need to create rules by yourself
 	LINCLUDE	: The include dir which you need.
 
 	${TINY-MAKE}/script/Makefile.XXX are main Mailfiles.

@@ -44,7 +44,7 @@ ECHO	= ${Q}echo
 ##################################
 
 # CFLAGS
-CFLAGS	= -Wall -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion ${DEBUG_MODE}
+CFLAGS	= -Wall -Wcast-qual -Wcast-align -Wwrite-strings ${DEBUG_MODE}
 
 # INCLUDE
 INCLUDE	= -I${TOP}/include ${XINCLUDE}

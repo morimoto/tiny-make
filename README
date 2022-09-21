@@ -75,6 +75,7 @@
 	TARGET		: target object which build from OBJ
 	MYTARGET	: user own target. user need to create rules by yourself
 	LINCLUDE	: The include dir which you need.
+	LIBRARY		: necessary library. -lxxx style
 
 	${TINY-MAKE}/script/Makefile.XXX are main Mailfiles.
 	You can create system dependency Makefile as ${TINY-MAKE}/Makefile.local

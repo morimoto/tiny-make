@@ -87,5 +87,5 @@
 
 * Makefile.local
 
-	Makefile for you own system.
+	Makefile for your own system.
 	This file is loaded from Makefile.common

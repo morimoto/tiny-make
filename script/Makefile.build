@@ -51,7 +51,7 @@ sub_clean:
 
 ${TARGET}: ./builtin.o
 	${ECHO} "$@"
-	${CC} ${CFLAGS} ${INCLUDE} ${LFLAGS} -o $@ ./builtin.o ${LIBRARY}
+	${CC} ${CFLAGS} ${INCLUDE} ${LFLAGS} ${EXTR} -o $@ ./builtin.o ${LIBRARY}
 	${STRIP} $@
 
 -include depend.mk
